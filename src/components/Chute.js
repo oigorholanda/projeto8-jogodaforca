@@ -1,19 +1,21 @@
 import styled from "styled-components"
 
-export default function Chute() {
+export default function Chute(props) {
     return (
         <ChuteContainer>
             Já sabe a palavra?
-            <InputChute type="text" name="" id="" />
-            <BotaoChute disabled>Chutar</BotaoChute>
+            <InputChute disabled={props.disabled}  type="text" name="" id="" />
+            <BotaoChute disabled={props.disabled}>Chutar</BotaoChute>
         </ChuteContainer>
     )
 }
 
 const ChuteContainer = styled.div`
-    width: 80vh;
+    width: 40vw;
     display: flex;
     font-size: 20px;
+    gap: 5px;
+    min-width: 570px;
     justify-content: space-evenly;
     align-items: center;
     margin: auto;
@@ -21,8 +23,9 @@ const ChuteContainer = styled.div`
 `
 
 const InputChute = styled.input`
-    width: 353px;
+    width: 20vw;
     height: 40px;
+    min-width: 260px;
     background: #FFFFFF;
     border: 1px solid #CCCCCC;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);

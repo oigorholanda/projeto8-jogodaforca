@@ -1,13 +1,22 @@
+import { useState } from 'react';
 import styled from 'styled-components'
 import forca from '../assets/forca6.png'
 
-export default function Jogo() {
+export default function Jogo(props) {
+
+    
+    function IniciarJogo() {
+        props.habilitar(false)
+        console.log("Letras Habilitadas")
+    }
+
     return (
         <ContainerJogo>
             <img src={forca} alt="forca" />
             <Palavra>
-            <BotaoTop>Escolher Palavra</BotaoTop>
-                - - - - - - - - -
+            <BotaoTop onClick={IniciarJogo}>Escolher Nova Palavra</BotaoTop>
+
+                - - - - - - - - - - - - - -
             </Palavra>
 
 
@@ -16,8 +25,9 @@ export default function Jogo() {
 }
 
 const ContainerJogo = styled.div`
-    width: 55vw;
+    width: 60vw;
     height: 50vh;
+    min-width: 680px;
     display: flex;
     justify-content: space-between;
     margin: auto;
@@ -28,8 +38,9 @@ const ContainerJogo = styled.div`
 `
 
 const Palavra = styled.div`
-    width: 15vw;
+    width: 30vw;
     font-size: 50px;
+    min-width: 412px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -45,4 +56,5 @@ const BotaoTop = styled.button`
     background: #27AE60;
     border-radius: 8px;
     &:hover{cursor: pointer;}
+    &:disabled {color: purple;}
 `

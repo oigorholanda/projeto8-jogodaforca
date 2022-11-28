@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components'
 import Chute from './Chute';
 import Jogo from './Jogo';
@@ -5,15 +6,21 @@ import Letras from './Letras';
 import palavras from './palavras';
 
 function App() {
+  const [desabilitado, setdesabilitado] = useState(true);
+
+
+
   return (
     <>
       <Titulo>Jogo da Forca</Titulo>
-      <Jogo/>
-      <Letras/>
-      <Chute/>
+      <Jogo habilitar={setdesabilitado} palavras={palavras}/>
+      <Letras disabled={desabilitado}/>
+      <Chute disabled={desabilitado}/>
     </>
   );
 }
+
+
 
 const Titulo = styled.h1`
   width: 100%;
