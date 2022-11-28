@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import Chute from './Chute';
 import Jogo from './Jogo';
 import Letras from './Letras';
+import palavras from './palavras';
 
 function App() {
   return (
