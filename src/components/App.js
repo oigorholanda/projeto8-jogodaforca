@@ -7,13 +7,13 @@ import palavras from './palavras';
 
 function App() {
   const [desabilitado, setdesabilitado] = useState(true);
-
+  const [erros, setErros] = useState(0);
 
 
   return (
     <>
       <Titulo>Jogo da Forca</Titulo>
-      <Jogo habilitar={setdesabilitado} palavras={palavras}/>
+      <Jogo habilitar={setdesabilitado} palavras={palavras} erros={erros} contarerros={setErros}/>
       <Letras disabled={desabilitado}/>
       <Chute disabled={desabilitado}/>
     </>
